@@ -1,0 +1,15 @@
+
+		vm.eval(
+		' code . console.log( vm.dStk.pop() ); end-code '+
+	        ' code + var dStk=vm.dStk; dStk[dStk.length-2] += dStk.pop(); end-code '+
+	        ' code - var dStk=vm.dStk; dStk[dStk.length-2] -= dStk.pop(); end-code '+
+	        ' code * var dStk=vm.dStk; dStk[dStk.length-2] *= dStk.pop(); end-code '+
+	        ' code / var dStk=vm.dStk; dStk[dStk.length-2] /= dStk.pop(); end-code '+
+	        ' code hex vm.ram[vm.base] = 16; end-code '+
+	        ' code decimal vm.ram[vm.base] = 10; end-code '+
+	        ' code base vm.dStk.push(vm.base); end-code '+
+	        ' code @ var dStk=vm.dStk, i=dStk.length-1; dStk[i] = vm.ram[dStk[i]]; end-code '+
+	        ' code ! var dStk=vm.dStk; vm.ram[dStk.pop()] = dStk[dStk.length-1]; end-code '+
+	        ' code words vm.type( Object.keys( vm.dict ).join( " " ) ); end-code '+
+	        ' code ] vm.intoCompiling(); end-code '+
+		);

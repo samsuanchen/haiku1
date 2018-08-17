@@ -1,0 +1,51 @@
+[0626/192314.310:ERROR:icu_util.cc(133)] Invalid file descriptor to ICU data received.
+[0626/192314.310:FATAL:content_main_delegate.cc(53)] Check failed: false. 
+Backtrace:
+	v8::PropertyDescriptor::value [0x00007FFFF53D5ED4+60756]
+	std::vector<v8::CpuProfileDeoptFrame,std::allocator<v8::CpuProfileDeoptFrame> >::_Change_array [0x00007FFFF536CAB6+173702]
+	std::basic_ostream<char,std::char_traits<char> >::_Osfx [0x00007FFFF3AB3787+1719]
+	v8::internal::compiler::BasicBlock::successors [0x00007FFFF526504E+552206]
+	v8::internal::compiler::BasicBlock::successors [0x00007FFFF527C590+647760]
+	v8::internal::compiler::BasicBlock::successors [0x00007FFFF5264C11+551121]
+	ChromeMain [0x00007FFFF3AB11B8+288]
+	(No symbol) [0x00007FF69AE5304C]
+	(No symbol) [0x00007FF69AE5169B]
+	IsSandboxedProcess [0x00007FF69AF3D423+400115]
+	BaseThreadInitThunk [0x00007FF859803034+20]
+	RtlUserThreadStart [0x00007FF85B7B1431+33]
+
+[0626/192314.549:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: URL 使用的通訊協定無法識別 (0x2ee6)
+[0626/192408.402:ERROR:icu_util.cc(133)] Invalid file descriptor to ICU data received.
+[0626/192408.402:FATAL:content_main_delegate.cc(53)] Check failed: false. 
+Backtrace:
+	v8::PropertyDescriptor::value [0x00007FFFF53D5ED4+60756]
+	std::vector<v8::CpuProfileDeoptFrame,std::allocator<v8::CpuProfileDeoptFrame> >::_Change_array [0x00007FFFF536CAB6+173702]
+	std::basic_ostream<char,std::char_traits<char> >::_Osfx [0x00007FFFF3AB3787+1719]
+	v8::internal::compiler::BasicBlock::successors [0x00007FFFF526504E+552206]
+	v8::internal::compiler::BasicBlock::successors [0x00007FFFF527C590+647760]
+	v8::internal::compiler::BasicBlock::successors [0x00007FFFF5264C11+551121]
+	ChromeMain [0x00007FFFF3AB11B8+288]
+	(No symbol) [0x00007FF69AE5304C]
+	(No symbol) [0x00007FF69AE5169B]
+	IsSandboxedProcess [0x00007FF69AF3D423+400115]
+	BaseThreadInitThunk [0x00007FF859803034+20]
+	RtlUserThreadStart [0x00007FF85B7B1431+33]
+
+[0626/192408.589:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: URL 使用的通訊協定無法識別 (0x2ee6)
+[0627/003644.073:ERROR:icu_util.cc(133)] Invalid file descriptor to ICU data received.
+[0627/003644.073:FATAL:content_main_delegate.cc(53)] Check failed: false. 
+Backtrace:
+	v8::PropertyDescriptor::value [0x00007FFFF53D5ED4+60756]
+	std::vector<v8::CpuProfileDeoptFrame,std::allocator<v8::CpuProfileDeoptFrame> >::_Change_array [0x00007FFFF536CAB6+173702]
+	std::basic_ostream<char,std::char_traits<char> >::_Osfx [0x00007FFFF3AB3787+1719]
+	v8::internal::compiler::BasicBlock::successors [0x00007FFFF526504E+552206]
+	v8::internal::compiler::BasicBlock::successors [0x00007FFFF527C590+647760]
+	v8::internal::compiler::BasicBlock::successors [0x00007FFFF5264C11+551121]
+	ChromeMain [0x00007FFFF3AB11B8+288]
+	(No symbol) [0x00007FF69AE5304C]
+	(No symbol) [0x00007FF69AE5169B]
+	IsSandboxedProcess [0x00007FF69AF3D423+400115]
+	BaseThreadInitThunk [0x00007FF859803034+20]
+	RtlUserThreadStart [0x00007FF85B7B1431+33]
+
+[0627/003644.285:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: URL 使用的通訊協定無法識別 (0x2ee6)

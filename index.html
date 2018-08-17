@@ -1,0 +1,1137 @@
+<!DOCTYPE html><html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+<meta name="viewport" content="width=600"/>
+<meta name="viewport" content="initial-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<script src="html/PublishedHaiku/jquery.min.3.2.1.js"></script>
+<script src="html/PublishedHaiku/jquery.highlight-within-textarea.js"></script>
+<script src="html/PublishedHaiku/index.js"></script>
+<link href="html/PublishedHaiku/font_open_sans.css" rel="stylesheet"/>
+<link href="html/PublishedHaiku/jquery.highlight-within-textarea.css" rel="stylesheet"/>
+<link href="html/PublishedHaiku/index.css" rel="stylesheet"/>
+<link href="html/PublishedHaiku/forthsalon.css" rel="stylesheet"/>
+<link href="html/PublishedHaiku/haiku.css" rel="stylesheet"/>
+<title>haiku1範例集</title>
+<script async="" src="html/PublishedHaiku/analytics.js"></script>
+<script>
+	window['GoogleAnalyticsObject'] = 'ga';
+	window['ga'] = window['ga'] || function(){
+		(window['ga'].q=window['ga'].q||[]).push(arguments)
+	},
+	window['ga'].l=1*new Date();
+	var m=document.getElementsByTagName('script')[0]; // the first script
+	    a=document.createElement('script'), // new empty script
+
+	a.async=1;
+	a.src='html/PublishedHaiku/analytics.js';
+	m.parentNode.insertBefore(a,m); // let the empty script as the first
+
+	ga('create', 'UA-57431218-2', 'auto');
+	ga('send', 'pageview');
+</script>
+</head><body onload="init()" onresize="bodyResize()">
+<div class="section" padding=0 margin=0>
+<table width=100% board=0><tr width=100%><td width=20% valign=top>
+<div>
+<span id="editimage" name="haiku" width=200 height=200>
+<textarea style="display: none" id="dst_code"></textarea></span>
+</div><div id="mouse"><hr>
+<font color="yellow">haiku1 雲端方寸</font> 彩繪平台
+<hr>
+滑鼠 x,y (0,0)<br>
+時間 t (0)
+<hr>
+紅光 R (0)<br>
+綠光 G (0)<br>
+藍光 B (0)<br>
+透視 T (1)
+</div><hr><div id="prev">
+<a id="aOpenPrev" onclick="actOnTitle(aOpenPrev)">開啟 前例</a>
+</div><div id="curr">
+<a id="aCloseCurr" onclick="actOnTitle(aCloseCurr)">關閉 此例</a>
+</div><div id="next">
+<a id="aOpenNext" onclick="actOnTitle(aOpenNext)">開啟 次例</a>
+</div><hr><div>
+<a id="aGlossary" onclick="actOnGlossary()">開啟 基本指令集</a><hr>
+<a id="myButton" onclick="actYo()">yo</a>
+</div>
+</td><td width=80%>
+<textarea style="overflow-x: scroll; white-space:nowrap;"
+    name="code" id="src_code">
+\ haiku{1}.html 雲端方寸彩繪 範例集 2018/06/24 陳爽 samsuanchen@gmail.com
+\ \ \ --------------------------------------------------------------
+\ 註0: 反斜線空格之後 直到列尾的文字都忽略 作註解
+\      左圓刮號空格之後 到 對應 右圓刮號 之間文字也都忽略 作註解
+
+\ 註1: 請儘量用 google chrome 瀏覽器 開啟 此網頁
+
+\ 註2: 其他範例可參閱 html/PublishedHaiku1.html 與 html/PublishedHaiku2.html
+
+\ 註3: 更多範例可參閱 Brad N1elson 的 https://forthsalon.appspot.com/ 網頁
+
+\ 註4: 列首為 "  ( \" 的下一列到列首為 "\ ) \" 的上一列 都是 可執行 範例
+\      將 "  ( \" 變為 "\ ( \", 第一個空格變為反斜線, 即 開啟 範例, 自動顯示 圖形
+\      更改其中 數字或指令 即 自動顯示 更動效果 (最好參照 註6 複製 範例 進行測試)
+\      將 "\ ( \" 變為 "  ( \", 第一個反斜線變為空格, 即 關閉 範例, 停止顯示 圖形
+
+\ 註5: 範例通常不能同時被開啟, 在開啟一個範例後, 最好先關閉, 然後才開啟另外一個範例
+\ 註6: 要測試範例, 最好先 複製 範例, 然後開啟 這副本, 改其中數字或指令 看圖形變化
+\ \ \ --------------------------------------------------------------
+\ ( \ 【0】 紅光飽和亮度
+  1
+\ 註: 1 是紅光的 飽和亮度
+\ ) \  [1]
+\ \ \ --------------------------------------------------------------
+  ( \ 【1】 漆黑無光
+  z
+\ 註: 非認定文字 數值 為 0
+\ ) \  [0]
+\ \ \ --------------------------------------------------------------
+  ( \ 【2】 紅光一半亮度
+  .5
+\ 註: .5 是紅光的 一半亮度
+\ ) \  [2]
+\ \ \ --------------------------------------------------------------
+  ( \ 【3】 亮度隨y變
+  x
+\ 註: x 值 左0到右1 為亮度
+\ ) \  [3]
+\ \ \ --------------------------------------------------------------
+  ( \ 【4】 亮度隨y變
+  y
+\ 註: y 值 下0到上1 為亮度
+\ ) \  [4]
+\ \ \ --------------------------------------------------------------
+  ( \ 【5】 亮度隨x+y變
+  x y +   \ 註: x y 相加
+\ 註: 值大於 1 亮度 為 1
+\ ) \  [5]
+\ \ \ --------------------------------------------------------------
+  ( \ 【6】 亮度隨x-y變
+  x y -
+\ 註: x 與 y 相減值 為 紅光 亮度 (從右下 1 到左上 -1) 值小於 0 其亮度 為 0
+\ ) \  [6]
+\ \ \ --------------------------------------------------------------
+  ( \ 【7】 左上區亮
+  x y <
+\ 註: x 與 y 相比 小於值 為 紅光 亮度 (左上區 1 右下區 0)
+\ ) \  [7]
+\ \ \ --------------------------------------------------------------
+  ( \ 【8】 左下區亮
+  x y + 1 <
+\ 註: x y 相加值 與 1 相比 小於值 為 紅光 亮度 (左下區 1 右上區 0)
+\ ) \  [8]
+\ \ \ --------------------------------------------------------------
+: 2pi pi pi + ; \ 定義 2pi 為 2倍圓周率
+\ \ \ --------------------------------------------------------------
+: 中心 .5 .5 ; 
+\ \ \ --------------------------------------------------------------
+: r \ 中心 到 任意點 x y 連線 的長度
+  x .5 - 2 ** y .5 - 2 ** + .5 ** ;
+\ \ \ --------------------------------------------------------------
+  ( \ 【9】 亮度隨r變
+  r
+\ 註: r (從中心 0 到邊界 1) 為 紅光 亮度
+\ ) \  [9]
+\ \ \ --------------------------------------------------------------
+  ( \ 【10】 .3半徑中心圓
+  r .3 <
+\ 註: 比較 r 與 .3, 小於 的 邏輯值 (圓內 1 圓外 0) 為 紅光 亮度
+\ ) \  [10]
+\ \ \ --------------------------------------------------------------
+  ( \ 【11】 .2半徑中心洞
+  r .2 >
+\ 註: 比較 r 與 .2, 大於的 邏輯值 (圓內 0 圓外 1) 為 紅光 亮度
+\ ) \  [11]
+\ \ \ --------------------------------------------------------------
+: 間 ( V L U -- 區 ) \ V 在 L U 兩數間 的 邏輯值 (0 或 1)
+  >r over r> <= >r >= r> and ;
+\ \ \ --------------------------------------------------------------
+  ( \ 【12】 .4半徑中心圈
+  r .3 .4 間
+\ 註: r 在 .3 .4 兩數間 的 邏輯值 為 紅光 亮度
+\ ) \  [12]
+\ \ \ --------------------------------------------------------------
+: a \ 中心 到 任意點 x y 向線 與 x軸向 間的角度 (0 到 1 對應至 0 到 2pi)
+  y .5 - x .5 - atan2 2pi / 1 mod ;
+\ \ \ --------------------------------------------------------------
+  ( \ 【13】 亮度隨a變
+  a
+\ 註: a (從x軸向 0 隨轉角遞增 回到x軸向 1) 為 紅光 亮度
+\ ) \  [13]
+\ \ \ --------------------------------------------------------------
+: 轉軸 - 1 mod ;
+\ \ \ --------------------------------------------------------------
+  ( \ 【14】 x軸轉36度
+  a .1 轉軸
+\ ) \  [14]
+\ \ \ --------------------------------------------------------------
+: 中圓 ( R -- 圓 ) r > ; \ 以 R 為 半徑 的 中心圓
+\ \ \ --------------------------------------------------------------
+  ( \ 【15】 .3半徑中心圓
+  .3 中圓
+\ 註: .3 半徑 中心圓
+\ ) \  [15]
+\ \ \ --------------------------------------------------------------
+: 中洞 ( R -- 洞 ) r < ; \ 以 R 為 半徑 的 中心洞
+\ \ \ --------------------------------------------------------------
+  ( \ 【16】 .3半徑中心洞
+  .3 中洞
+\ 註: .3 半徑 的 中心洞
+\ ) \  [16]
+\ \ \ --------------------------------------------------------------
+: 線徑 .01 ;
+: 線半徑 線徑 2 / ;
+\ \ \ --------------------------------------------------------------
+: 線 ( r v -- 線 ) \ r v 等值線
+  - abs 線半徑 < ;
+\ \ \ --------------------------------------------------------------
+  ( \ 【17】 r與.3等值線
+  r .3 線
+\ 註: r .3 兩值相等 的 線
+\ ) \  [17]
+\ \ \ --------------------------------------------------------------
+: 中圈 ( R -- 圈 ) r 線 ; \ 以 R 為 半徑 的 中心圈
+\ \ \ --------------------------------------------------------------
+  ( \ 【18】 .2半徑中心圈
+  .2 中圈
+\ 註: .2 為 半徑 的 中心圈
+\ ) \  [18]
+\ \ \ --------------------------------------------------------------
+: 反 ( v -- 1-v ) 1 swap - ; \ 反轉 光度 (0 到 1 對應至 1 到 0)
+\ \ \ --------------------------------------------------------------
+  ( \ 【19】 x 反
+  x 反
+\ 註: 1-x (從左 1 到右 0) 為 紅光 亮度
+\ ) \  [19]
+\ \ \ --------------------------------------------------------------
+: 暈 ( r v -- 暈 ) - .2 ** 反 ; \ r v 等值暈
+\ \ \ --------------------------------------------------------------
+  ( \ 【20】 r與.3等值暈
+  r .3 暈
+\ 註: r .3 兩值相等 的 暈
+\ ) \  [20]
+\ \ \ --------------------------------------------------------------
+: 階 ( v n -- v ) \ v 分 n 階 對應區值 0/(n-1) 1/(n-1) .. (n-1)/(n-1)
+  dup push * floor pop 1 - / ; \ v 的 對應區值 floor(v*n)/(n-1)
+\ \ \ --------------------------------------------------------------
+  ( \ 【21】 x 3 階
+  x 3 階
+\ 註: x 分 3 階, x<1/3 區值為 0, 1/3<x<2/3 區值為 .5, x>2/3 區值為 1
+\ ) \  [21]
+\ \ \ --------------------------------------------------------------
+  ( \ 【22】 a 8 階
+  a 8 階  .45 中圓 *
+\ ) \  [22]
+\ \ \ --------------------------------------------------------------
+: 階格 ( x y n -- v ) \ x,y 的 n*n 階格 對應
+  dup >r 階 swap r> 階 + 2 / ;
+\ \ \ --------------------------------------------------------------
+  ( \ 【23】 x y 8 階格
+  x y 8 階格
+\ ) \  [23]
+\ \ \ --------------------------------------------------------------
+  ( \ 【24】 a r 8 階格
+  a r 8 階格  .45 中圓 *
+\ ) \  [24]
+\ \ \ --------------------------------------------------------------
+: 摺 ( v n -- v ) * 1 mod ; \ v 的 n 摺 對應
+\ \ \ --------------------------------------------------------------
+  ( \ 【25】 x 5 摺
+  x 5 摺
+\ ) \  [25]
+\ \ \ --------------------------------------------------------------
+  ( \ 【26】 5*5 圓
+  : x x 5 摺 .5 - ;
+  : y y 5 摺 .5 - ;
+  : r x 2 ** y 2 ** + .5 ** ;
+  r .45 <
+\ ) \  [26]
+\ \ \ --------------------------------------------------------------
+  ( \ 【27】 五瓣花
+  r 2 ** 6 * 反  a 5 摺  >
+\ ) \  [27]
+\ \ \ --------------------------------------------------------------
+  ( \ 【28】 鴨
+  r 2 摺 a .35 轉軸 1.5 摺 > .5 中圓 *
+\ ) \  [28]
+\ \ \ --------------------------------------------------------------
+  ( \ 【29】 齒輪
+  r 4 摺 a 8 摺 < .5 中圓 *
+\ ) \  [29]
+\ \ \ --------------------------------------------------------------
+: 摺格 ( x y n -- v ) \ x,y 的 n*n 摺格 對應值
+  dup >r 摺 swap r> 摺 * ;
+  ( \ 【30】 x y 8 摺格
+  x y 8 摺格
+\ ) \  [30]
+\ \ \ --------------------------------------------------------------
+  ( \ 【30x】 test 階 間
+  : n 7 ; : x x n 1 + 階 ; : y y n 1 + 階 ;
+  : ix n x * floor ;  : iy n y * floor ;
+  : h ( iB iT -- iB<=iy<=iT ) iy -rot 間 ;
+  : v ( iL iR -- n0<=ix<=n1 ) ix -rot 間 ;
+  : rect ( iL iB iR iT -- rect )
+    >r swap r> v >r h r> and ;
+  : p ( ix iy -- ) dup 1 + h swap dup 1 + v and ;
+  5 6 v  1 2 h  +
+  3 5 p
+  ix iy <
+  1 1 7 7 rect
+\ ) \  [30x]
+\ \ \ --------------------------------------------------------------
+  ( \ 【31】 r a 8 摺格
+  r a 8 摺格
+\ ) \  [31]
+\ \ \ --------------------------------------------------------------
+: 移 ( x n -- v ) - ; \ x=0 移 n
+\ \ \ --------------------------------------------------------------
+  ( \ 【32】 x原點移到.1
+: x x .1 移 ;
+  x 0 <
+\ ) \  [32]
+\ \ \ --------------------------------------------------------------
+: 放 ( x n -- v ) * ; \ x值域放n倍
+\ \ \ --------------------------------------------------------------
+  ( \ 【33】 x值域放2倍 
+  : x x 2 放 ;
+  x .2 <
+\ ) \  [33]
+\ \ \ --------------------------------------------------------------
+: 縮 ( x n -- v ) / ; \ x值域縮n倍
+\ \ \ --------------------------------------------------------------
+  ( \ 【34】 x值域縮2倍 
+  : x x 2 縮 ;
+  x .05 <
+\ ) \  [34]
+\ \ \ --------------------------------------------------------------
+  ( \ 【35】 另類 間
+  y .4 .6 間
+  x .4 .6 2dup - abs 2 / >r + 2 / - abs r> <  +
+\ ) \  [35]
+\ \ \ --------------------------------------------------------------
+: 矩形 ( x0 y0 w h -- 矩 )
+  2 / >r y rot 移 abs r> < >r
+  2 / swap x 移 abs > r> * ;
+\ \ \ --------------------------------------------------------------
+  ( \ 【36】 寬.4高.3矩形
+  中心 .4 .3 矩形
+\ ) \  [36]
+\ \ \ --------------------------------------------------------------
+: 方形 ( x0 y0 d -- 方 ) dup 矩形 ;
+\ \ \ --------------------------------------------------------------
+  ( \ 【37】 邊長.4方形
+  中心 .4 方形
+\ ) \  [37]
+\ \ \ --------------------------------------------------------------
+: 距 ( X Y -- 距 ) \ 指定點 X Y 到 任意點 x y 連線 長度
+  y - 2 ** swap x - 2 ** + sqrt ;
+\ \ \ --------------------------------------------------------------
+  ( \ 【38】 .3半徑左下圓
+  .4 .4 距 .3 <
+\ ) \  [38]
+\ \ \ --------------------------------------------------------------
+: 角 ( X Y -- 角 ) \ 指定點 X Y 到 任意點 x y 向線 與 x軸向 間的角度
+  y swap - swap x swap - atan2
+  2pi / 1 mod ;
+\ \ \ --------------------------------------------------------------
+  ( \ 【39】 45度角轉18
+  .2 .2 距 .7 <  .2 .2 角 .05 轉軸 .15 <  *
+\ ) \  [39]
+\ \ \ --------------------------------------------------------------
+: 縱線 ( X -- 線 )
+  x 線 ; 
+\ \ \ --------------------------------------------------------------
+  ( \ 【40】 橫座標.5縱線
+  .5 縱線
+\ ) \  [40]
+\ \ \ --------------------------------------------------------------
+: 橫線 ( Y -- 線 ) y 線 ; 
+\ \ \ --------------------------------------------------------------
+  ( \ 【41】 縱座標.5橫線
+  .5 橫線
+\ ) \  [41]
+\ \ \ --------------------------------------------------------------
+: 兩點斜率 ( p1 p2 -- 斜率 )
+   rot - ( x1 x2 y2-y1 )
+  -rot - ( y2-y1 x1-x2 ) / ;
+\ \ \ --------------------------------------------------------------
+: 點 線徑 2 * -rot 距 > ;
+\ \ \ --------------------------------------------------------------
+: 縱軸截點 ( X Y 斜率 -- 縱軸截點 )
+  rot * + ;
+\ \ \ --------------------------------------------------------------
+: 左位 .2 ; : 下位 .2 ;
+\ \ \ --------------------------------------------------------------
+: 右位 .8 ; : 上位 .8 ;
+\ \ \ --------------------------------------------------------------
+: 左下 左位 下位 ;  : 右上 右位 上位 ;
+\ \ \ --------------------------------------------------------------
+  ( \ 【42】 過 縱軸截點 指定斜率 的 線
+  左下 點  右上 點
+  左下  左下 右上 兩點斜率
+  dup >r
+  縱軸截點 \ 0 swap 點
+  r@ x * -   y
+\ 線半徑
+  r> 2 ** 1 + sqrt *
+  線
+\ ) \  [42]
+\ \ \ --------------------------------------------------------------
+: 過兩點線 ( p1 p2 -- 線 )
+  >r over r>    ( p1 x2 y1 y2 )
+  - >r          ( p1 x2 ) ( -dy )
+  >r over r>    ( p1 x1 x2 ) ( -dy )
+  swap -        ( p1 dx ) ( -dy ) dup
+  If \ dx 不為 0, 非 縱線 也非 點
+   r> swap      ( p1 -dy dx )
+   /            ( p1 斜率 ) dup >r
+   縱軸截點 r@ x * -  y
+   r> 2 ** 1 + sqrt *  線
+  else          ( p1 dx ) ( -dy )
+   drop r>      ( p1 -dy )
+   if drop      ( x1 ) 縱線
+   else         ( p1 )
+     橫線 swap  ( 線 x1 )
+     縱線 * \ 交點
+   then
+  then ;
+\ \ \ --------------------------------------------------------------
+  ( \ 【43】 兩點線 縱線 橫線
+  : 左 .2 ;  : 下 .2 ;  : 右 .8 ;  : 上 .8 ;
+  : 左下 左 下 ;  : 右上 右 上 ;
+  左下 點  右上 點 +
+  左下 右上 過兩點線
+  左 縱線 +
+  右 縱線 +
+  下 橫線 +
+  上 橫線 +
+\ ) \  [43]
+\ \ \ --------------------------------------------------------------
+  ( \ 【A】 圓圈洞 與 紅綠藍透
+  .2 中圓 \ 紅 半徑 .2 中圓
+  .3 中圈 \ 綠 半徑 .3 中圈
+  .4 中洞 \ 藍 半徑 .4 中洞
+  .5 中圓 \ 透 半徑 .5 中圓
+\ 建議: 數值 測試區間 .0 到 .5
+\ ) \ [A]
+\ \ \ --------------------------------------------------------------
+  ( \ 【B】 距角內外間反
+  \ 距 \ 點 到 任意位置 距離
+  \ 角 \ 點 到 任意位置 角度
+  中心 距 .2 < \ 半徑 0.2 中圓 R
+  中心 距 .3 > \ 半徑 0.3 中洞 G
+  中心 角 0 .1 間 \ 角度 -180 到 36 B
+  .4 中洞 反 \ 半徑 0.4 中圓 A 
+\ 註1 洞 反 即是 圓, 圓 反 即是 洞
+\ 註2 紅藍重疊變 紫, 綠藍重疊變 青
+\ 建議: p0 距 測試區間 0.0 到 0.5
+\ 建議: p0 角 測試區間 0.0 到 1.0
+\ ) \  [B]
+\ \ \ --------------------------------------------------------------
+  ( \ 【C】 xy 間方
+\ x 左右 0 到 1
+\ y 下上 0 到 1
+  中心 .2    方 \ 紅 cx,cy 心 .2 方
+  x    .3 .7 間 \ 綠 
+  y    .3 .7 間 \ 藍
+  中心 .8    方 \ 透 cx,cy 心 .4 方
+\ 建議: p q 測試區間 -0.5 到 0.5
+\ 建議: x y 測試區間 0.0 到 1.0
+\ ) \  [C]
+\ \ \ --------------------------------------------------------------
+  ( \ 【D】 xyrapq距角 階格摺格
+  中心 距 sin 中心 角 t sin - 5 摺 +
+\ y
+\ x 3 摺 y 3 摺 + 2 /
+\ x      y 3 摺格
+\ x 9 階 y 9 階 + 2 /
+\ x      y 9 階格
+\ x y + 2/
+\ 中心 距      中心 角 9 摺格
+\ 中心 距 9 摺 中心 角 9 摺 *
+\ 中心 距      中心 角 9 階格
+\ 中心 距 9 階 中心 角 9 階 *
+\ ) \  [D]
+\ \ \ --------------------------------------------------------------
+  ( \ 【E】 風扇
+\ 中心 角 t 移        3 摺 \ 3葉扇反轉
+\ 中心 角 t negate 移 3 摺 \ 3葉扇正轉
+: 風扇
+  中心 角 t 5 / 移 4 摺 \ 4紅葉反轉
+  dup \ 綠 \ 與紅重疊變黃
+  中心 距 8 階 反 \ 藍
+ .45 中圓 .1 中洞 *  \ 透視
+; 風扇
+\ ) \  [E]
+\ \ \ --------------------------------------------------------------
+  ( \ 【F】 x 函數 等於 y 隨 t 移 的線
+  : t t 5 縮 ; \ t 區縮小 5 倍
+  : x x t 移 ; \ x 原點 隨 t 移
+  : x x 2pi 放 ; \ x 區放大
+  : y y .5 移 ; \ y 原點 移到中間
+  : y y 3 放 ; \ y 區放大 5 倍
+  : f x sin ; \ f 為 x 的 函數
+  f y 線 \ f 等於 y 的線
+  f y 暈 \ f 等於 y 的暈
+\ 建議: 改變縮放倍數測試效果
+\ ) \  [F]
+\ \ \ --------------------------------------------------------------
+  ( \ 【G】 時鐘
+: 秒 t floor ; \ 捨小數 取整數 
+: 分 t 60 / ;
+: 時 t 3600 / ;
+: r \ 中心到 x,y 的距離, 1 到邊
+  x .5 - dup * y .5 - dup *
+  + sqrt ;
+: a \ 中心到 x,y 的角度, 0 到 1
+  y .5 - x .5 - atan2
+  pi + pi / 2 / ;
+\ 中心發 角 t 線
+: 格 \ t n -- 線
+/ .25 - \ 0 向上
+  2pi * \ 值域 -pi 到 pi
+  >r \ 角度儲存備用
+  r@ sin x .5 - *
+  r@ cos y .5 - *
+  + abs 1.005 - 150 ** \ 角a 心線 
+  r> 2pi / a + .5 - 2pi * cos *
+ ; \ 去 角a+pi 線
+: 秒針
+  秒 60 格 \ 每秒走 1/60 圈
+  r .05 .37 間 * \ 秒針起訖端點
+  r .03 .05 間 + \ 中心紅圈
+; 秒針 \ 顯示 紅色秒針
+: 秒標 60 2pi * \ 60 週期
+  a * cos \ 餘旋波
+  .93 > \ 振幅大於.93 設定 時標 長
+  r .41 .43 間 * \ 設定 秒標 寬
+; 秒標 + \ 紅色秒標
+: 分針
+  分 60 格 \ 每分走 1/60 圈
+  r .07 .32 間 * \ 分針起訖端點
+  r .05 .07 間 + \ 中心綠圈
+; 分針 \ 顯示 綠色分針
+: 時標 12 2pi * \ 12 週期
+  a * cos \ 餘旋波
+  .97 > \ 振幅大於.97 設定 時標 長
+  r .41 .425 間 * \ 設定 時標 寬
+; 時標 + \ 綠色時標
+: 時針
+  時 12 格 \ 每時走 1/12 圈
+  r .09 .3 間 * \ 時針起訖端點
+  r .07 .09 間 + \ 中心藍圈
+; 時針 \ 顯示 藍色時針
+: 框 \ v -- 框
+  x    y    * .001 > * \ 右下黑
+  x 反 y    * .001 > * \ 左下黑
+  x    y 反 * .001 > * \ 右上黑
+  x 反 y 反 * .001 > * \ 左上黑
+;
+ .5 框 \ 光度 .5
+\ 藍色盤面
+ .3
+ x    y    * .009 > * \ 右下紅
+ x 反 y    * .009 > * \ 左下紅
+ x    y 反 * .009 > * \ 右上紅
+ x 反 y 反 * .009 > * \ 左上紅
+ +
+ .2
+ x    y    * .022 > * \ 右下紅
+ x 反 y    * .022 > * \ 左下紅
+ x    y 反 * .022 > * \ 右上紅
+ x 反 y 反 * .022 > * \ 左上紅
+ +
+ r .39 > *
+ + \ 半徑 .39 洞
+ 1 框
+\ ) \  [G]
+\ \ \ --------------------------------------------------------------
+  ( \ 【H】 從點 x,y 向角 a 發出的線
+: x1 .1 ; : y1 .4 ; : p1 x1 y1 ;
+: x2 .6 ; : y2 .8 ; : p1 x2 y2 ;
+: a1 左位 右位 - 上位 下位 - atan2 2pi / ;
+\ 紅色參考格線
+  x 10 摺 .05 <
+  y 10 摺 .05 < +
+\ 紅色點角線
+\ .5 .5 a1 點角線 +
+\ 綠色兩點線
+  左下 右上 過兩點線
+\ 藍色兩點區間
+\ x1 y1 a1 .5 + 點角向
+\ x2 y2 a1 點角向 * * 
+\ ) \  [H]
+\ \ \ --------------------------------------------------------------
+  ( \ 【I】 國旗飄揚
+\ ( 國旗 橫向 略垂
+  : dy x .5 * ; \ )
+\ ( I0 旗桿左右移動 週期 20 秒
+: x x t 2 / sin 2 + 8 / - ; \ )
+\ ( I1 畫桿
+: 桿 x 0 > x .02 < *
+  x .01 - 2 ** y .98 - 2 ** +
+  sqrt .02 < + ; \ )
+\ ( I2 改 x y 值域 0 到 2
+: x x 2 * ; : y y 2 * ; \ )
+\ ( I3 國旗上下升降 週期 8 秒
+: y y t 8 / sin 1 + 2 / - ; \ )
+\ ( I4 國旗迎風飄動
+: y x 3 / t 6 / pi 8 /
+mod - pi * 10 * cos 40 / \ 水平波動
+dy + \ 國旗隨 x 下垂 
+y + 1.15 * ;
+\ )
+\ ( I5 改值域 x 0 到 4, y -3 到 1
+: x x 2 * ; : y y 2 * 1 - ; \ )
+: r \ 日心 到 x,y 距離
+  x .5 - 2 **
+  y .5 - 2 ** + sqrt ;
+: θ \ 日心 到 x,y 角 徑度
+  x .5 - y .5 - atan2 ;
+: n 12 ;
+: α \ n角星 內頂角 徑度 的 一半
+  pi 9 / ; \ 改 9 為 2 即 n邊形
+: a 2 pi * n / ; : h a 2 / ;
+: β \ n 道 光芒
+  θ a mod h - abs ;
+\ θ pi / 1 + 2 /
+: n角星 α sin .3 *
+  α cos β sin *  β cos α sin * +
+  / r > ;
+: 洞 r .17 > ; : 圓 r .1 < ;
+: 日
+  n角星
+  洞 *
+  圓 +
+;
+: 天 y 0 > y .9 < *
+  x .1 > * x 1 < * ;
+: 地 1 天 - y abs .9 < *
+  x .1 > * x 2 < * ; 
+: 幽暗大地 0 0 0 ; \ RGB 光歸零
+: 藍天晨曦 \ 加 右上角 藍天晨曦
+  x y + .1 * + ; 
+: 綠野山嵐 \ 加 左下角 綠野山嵐
+  swap
+  .1 x y + 2 / .1 * - +
+  swap ; 
+: 國旗飄揚 \ 青天白日滿地紅
+  rot 日 + 地 +
+  rot 日 +
+  rot 天 + 
+;
+: 升上桿頭 \ 升上 白色旗桿
+  rot 桿 +
+  rot 桿 +
+  rot 桿 + ;
+\ ( I6 範例展示
+  幽暗大地
+  藍天晨曦
+  綠野山嵐
+  國旗飄揚
+  升上桿頭 \ )
+\ ) \  [I]
+\ \ \ --------------------------------------------------------------
+  ( \ 【J】 fluttering flag of ROC 2016/09/24
+  : dy x .4 * ; \ flutterfalling adjustment
+  \ ( 1. pole moving, duration 20 sec
+    : x x t 1 / sin 2 + 8 / - ;
+  \ )
+  : pole x 0 > x .02 < *
+    x .01 - 2 ** y .98 - 2 ** +
+    sqrt .02 < +
+  ; 
+  \ ( 2. change x y range, [0,1] to [0,2]
+    : x x 2 * ; : y y 2 * ; 
+  \ )
+  \ ( 3. flag moving duration 8 sec
+    : y y t 8 / sin 1 + 2 / - ; 
+  \ )
+  \ ( 4. flag fluttering horizontally
+    : y  x 3 /  t 6 /  pi 8 /
+      mod - pi * 10 *  cos 40 /  y +  1.1 *
+      dy + \ falling adjustment
+    ;
+  \ )
+  \ ( 5. change x range [0,2] to [0,4], y range [0,2] to [-3,1]
+    : x x 2 * ; : y y 2 * 1 - ;
+  \ )
+  : r  x .5 - 2 **  y .5 - 2 **  +  sqrt
+  ; \ the distance from sun center to x,y
+  : θ  x .5 - y .5 - atan2 
+  ; \ the angle from sun center to x,y
+  : n  12 ;
+  : α  pi 9 / 
+  ; \ half inner angle of n-angle star
+  : a  2 pi * n / ; : h a 2 / ;
+  : β  θ a mod h - abs ;
+  : n-angle-star  α sin .3 *
+    α cos β sin * β cos α sin * +
+    /  r >
+  ;
+  : hole  r .17 > ;
+  : circle  r .1 < ;
+  : sun  n-angle-star  hole *  circle + ;
+  : sky  y 0 > y .9 < *  x .1 > * x 1 < * ;
+  : land  1 sky - y abs .9 < *  x .1 > * x 2 < * ; 
+  : darkness  0 0 0 ;
+  : blue-sky  x y + .1 * + ; 
+  : green-land  swap  .1 x y + 2 / .1 * - +  swap ;
+  : yellow-pole  rot pole +  rot pole +  rot ;
+  : color-flag  rot sun + land +  rot sun +  rot sky + ;
+  \ ( demostration
+    darkness
+    blue-sky
+    green-land
+    yellow-pole
+    color-flag
+  \ )
+\ ) \  [J]
+\ \ \ --------------------------------------------------------------
+\ \ \ 其他範例 \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+  ( \ 【K】 四個圓
+: 圓 ( x0 y0 r0 -- 圓 ) \ 圓心 x0,y0 半徑 r0
+  -rot     \ ( r0 x0 y0 )
+  y - 2 ** \ ( r0 x0 (y0-y)**2 )
+  swap     \ ( r0 (y0-y)**2 x0 )
+  x - 2 ** \ ( r0 (y0-y)**2 (x0-x)**2 )
+  +        \ ( r0 (y0-y)**2+(x0-x)**2 )
+  .5 **    \ ( r0 ((y0-y)**2+(x0-x)**2)**.5 )
+  swap     \ ( ((y0-y)**2+(x0-x)**2)**.5 r0 )
+  <        \ ( ((y0-y)**2+(x0-x)**2)**.5<r0 )
+;
+.45 .55 .4 圓 \ 紅色 圓
+.40 .35 .3 圓 \ 綠色 圓
+.75 .38 .2 圓 \ 藍色 圓
+.50 .50 .5 圓 \ 透視 圓
+\ ) \  [K]
+\ \ \ --------------------------------------------------------------
+  ( \ 【L】 幾個矩形
+: 矩 ( x0 y0 x1 y1 -- 矩形 )
+  y >  ( x0 y0 x1 y1>y )
+  rot  ( x0 x1 y1>y y0 )
+  y <  ( x0 x1 y1>y y0<y )
+  *    ( x0 x1 y1>y*y0<y )
+  >r   ( x0 x1 )
+  x >  ( x0 x1>x )
+  swap ( x1>x x0 )
+  x <  ( x1>x x0>x )
+  *    ( x1>x*x0>x )
+  r>   ( x1>x*x0>x y1>y*y0<y )
+  *    ( x1>x*x0>x*y1>y*y0<y ) 
+;
+: 反 ( 光度 -- 相反光度 )
+  0 max    \ 若光度小於0, 就將光度變為0
+  1 min    \ 若光度大於1, 就將光度變為1
+  1 swap - \ 光度0的地方變為1, 1的地方變為0
+;
+\ 紅 橫矩形
+.10 .20 .90 .80 矩 
+\ 綠 豎矩形
+.20 .10 .80 .90 矩 
+\ 藍 框
+.01 .01 .99 .99 矩 
+.09 .09 .91 .91 矩 反 *
+\ ) \  [L]
+\ \ \ --------------------------------------------------------------
+  ( \ 【M】 黑紅黃綠籃紫青白
+x Y <                           \ 左上 紅,
+X sin  y 3 * cos  >             \ 右上 綠, 紅+綠=黃, 
+x .5 - 2 ** y .5 - 2 ** + .5 ** \ x,y 到中心點的距離
+dup .3 <                        \ 中圓 藍, 紅+綠+藍=白, 紅+藍=紫, 綠+藍=青
+swap .5 <                       \ 透視 圓
+\ ) \  [M]
+\ \ \ --------------------------------------------------------------
+  ( \ 【N】 雲游山水
+\ 雲遊山水 https://forthsalon.appspot.com/haiku-view/ahBzfmZvcnRoc2Fsb24taHJkchILEgVIYWlrdRiAgIDA7d2ACgw
+: x x .45 - ;  : y y .5 - ;  : 2pi 2 pi * ;  
+: atan2 atan2 2pi / 1 mod ;  : cos 2pi * cos ;
+: a y x atan2 ;  : r x 2 ** y 2 ** + .5 ** ;
+: contour ( u v -- contour ) - abs 1 swap - 99 ** ;
+a .4 * r  contour   \ 游
+x cos 3 / y contour \ 山
+0 y contour y abs + \ 水
+\ ) \  [N]
+\ \ \ --------------------------------------------------------------
+  ( \ 【O】 花
+: a 2dup z* log ; 
+x .1 +  y .1 +
+a a a a log over
+\ ) \  [O]
+\ \ \ --------------------------------------------------------------
+  ( \ 【P】 n by n 多圖並列
+\ n by n pictures https://forthsalon.appspot.com/haiku-editor?id=ahBzfmZvcnRoc2Fsb24taHJkchILEgVIYWlrdRiAgICgys2eCgw
+: n 2 ;
+: nx x n * ; : ny y n * ;
+: row ( pic iy -- pic' ) swap over ny < * swap 1 + ny > * ;
+: col ( pic ix -- pic' ) swap over nx < * swap 1 + nx > * ;
+: cell ( pic ix iy -- pic' ) >r col r> row ;
+: x nx 1 mod ; : y ny 1 mod ;
+: a y .5 - x .5 - atan2 2 pi * / 1 mod ;
+: r y .5 - 2 ** x .5 - 2 ** + .5 ** ;
+: k 2 t 9 mod + ;
+: pic0 r k * 1 mod               ;
+: pic1 r k * 1 mod a k * 1 mod + ;
+: pic2 r k * 1 mod a k * 1 mod * ;
+: pic3             a k * 1 mod   ;
+pic0 0 0 cell                 pic3 1 1 cell +    \ R
+pic1 0 1 cell  pic2 1 0 cell  pic3 1 1 cell + +  \ G
+0                                                \ B
+r .5 <                                           \ T
+\ ) \  [P]
+\ \ \ --------------------------------------------------------------
+  ( \ 【Q】 藍鹛
+\ 藍鹛 https://forthsalon.appspot.com/haiku-view/ahBzfmZvcnRoc2Fsb24taHJkchILEgVIYWlrdRiAgIDAvcqQCgw
+: n 3 ; : z 2dup z* log ;
+: dx t cos ; : t t n / ; : dy t cos ;
+: x x .5 - ; : y y .5 - ;
+: u x n * dx + ;
+: v y n * dy + ;
+u v z z log log over swap over z
+x 2 ** y 2 ** + .5 ** .45 < *
+\ ) \  [Q]
+\ \ \ --------------------------------------------------------------
+  ( \ 【R】 乒乓
+\ pong game redux https://forthsalon.appspot.com/haiku-view/ahBzfmZvcnRoc2Fsb24taHJkchILEgVIYWlrdRiAgICgrMSSCgw
+: v t swap / dup floor - 1.96 * .98 - dup 0 > 2 * 1 - * .01 + ;
+: px 2.9 v .94 * .025 + ; : py 3.5 v ;
+: ball px x - 2 ** py y - 2 ** + .5 ** .02 < ;
+: m .4 * .5 + - ;
+py .9 * .04 + dup t 3 * sin m px * - y - abs .1 < x .03 < *
+ball +
+ball
+py .9 * .04 + dup t 2 * cos m 1 px - * - y - abs .1 < x .97 > *
+ball +
+\ ) \  [R]
+\ \ \ --------------------------------------------------------------
+  ( \ 【S】 角度時鐘
+\ clock0 https://forthsalon.appspot.com/haiku-view/ahBzfmZvcnRoc2Fsb24taHJkchILEgVIYWlrdRiAgICAoo-VCgw
+\ this clock uses angles as needles
+  \ range changed from [0,2pi] to [0,1] for the angle
+  : 2pi 2 pi * ; : cos 2pi * cos ;
+  : atan2 atan2 2pi / 1 mod ;
+  \ the origin moved to the square center
+  : x x .5 - ; : y y .5 - ;
+  \ the distance from the origin to any point x,y
+  : r ( -- distance ) x 2 ** y 2 ** + .5 ** ;
+  \ the angle from origin to any point x,y
+  : a ( -- angle ) y x atan2 ;
+  \ the angle for n seconds
+  : s ( #seconds -- angle ) t floor swap / ;
+  \ the angle for n minutes
+  : m ( #minutes -- angle ) 60 s swap / ;
+  \ the angle for n hours
+  : h ( #hours -- angle ) 60 m swap / ;
+  \ the virtual needle for given angle and radius 
+  : n ( angle radius1 radius0 -- needle ) r < swap r > and swap a .25 - + 1 mod * ;
+  \ n ticks to form a whole circle
+  : t ( #ticks/circle -- ticks ) 2 / a * cos 999 ** r .45 > * r .49 < * ;
+  \ yellow angle points to hours
+  12 h .2 .03 n
+  \ red angle points to seconds with 4 ticks
+  60 s .4 .3 n 4 t +  over +
+  \ green angle points to minutes with 12 ticks
+  60 m .3 .2 n 12 t +  rot +
+\ ) \  [S]
+\ \ \ --------------------------------------------------------------
+  ( \ 【T】 轉動螺旋
+\ rolling spiral https://forthsalon.appspot.com/haiku-view/ahBzfmZvcnRoc2Fsb24taHJkchILEgVIYWlrdRiAgIDAnfSZCQw
+: 2pi 2 pi * ;
+: r dup * swap dup * + sqrt t 2pi / sin 5 / + ;
+: s push - swap pop - 2dup r
+  push atan2 0.01 * r@ +
+  200 * sin 1 pop - * ;
+: u t sin pi / ;
+: v t cos pi / ;
+.5 u + .5 v + x y s
+.5 u - .5 v - x y s
+\ ) \  [T]
+\ \ \ --------------------------------------------------------------
+  ( \ 【U】 多角形的蛻變
+\ n-edge-graph https://forthsalon.appspot.com/haiku-view/ahBzfmZvcnRoc2Fsb24taHJkchILEgVIYWlrdRiAgIDAxoCCCgw
+: edge-graph ( X Y R N -- red_circle n_green_edge ) over >r
+  rot y swap - >r        ( X R N                             | R y-Y        )
+  rot x swap - >r swap   ( N R                               | R y-Y x-X    )
+  pi 2 / dup  >r         ( N R α                            | R y-Y x-X α )
+  sin *                  ( N R*sinα                         | R y-Y x-X α )
+  r> rot                 ( R*sinα  α N                     | R y-Y x-X    )
+  pi swap /              ( R*sinα  α h                     | R y-Y x-X    )
+  dup dup +              ( R*sinα  α h a                   | R y-Y x-X    )
+  r> r@                  ( R*sinα  α h a x-X y-Y           | R y-Y        )
+  over >r                ( R*sinα  α h a x-X y-Y           | R y-Y x-X    )
+  atan2                  ( R*sinα  α h a θ                | R y-Y x-X    )
+  swap mod               ( R*sinα  α h mod(θ,a)           | R y-Y x-X    )
+  swap -                 ( R*sinα  α mod(θ,a)-h           | R y-Y x-X    )
+  abs                    ( R*sinα  α β                    | R y-Y x-X    )
+  over cos over sin *    ( R*sinα  α β cosα*sinβ        | R y-Y x-X    )
+  -rot                   ( R*sinα  cosα*sinβ α β        | R y-Y x-X    )
+  cos swap sin * +       ( R*sinα  cosα*sinβ+cosβ*sinα  | R y-Y x-X    )
+  /                      ( K                                 | R y-Y x-X    )
+  r> 2 ** r> 2 ** + sqrt ( K r                               | R            )
+  dup r> .93 * < -rot -  ( r<R*.95 K-r                       |              )
+  abs 1 swap - 199 **    ( r<R*.95 (1-abs(K-r))**199         |              )
+;
+: n t 10 mod floor
+  4 + ; \ 3 < n < 14
+.3 .35 .25 n edge-graph
+.5 .65 .25 n edge-graph
+.7 .35 .25 n edge-graph
+z+ z+
+\ ) \  [U]
+\ \ \ --------------------------------------------------------------
+  ( \ 【V】 蠕蟲
+\ vector balls - boomlinde https://forthsalon.appspot.com/haiku-view/ahBzfmZvcnRoc2Fsb24taHJkcg0LEgVIYWlrdRjSzRUM
+: 2>r >r >r ; : 2r> r> r> ;  : 2r@ 2r> 2dup 2>r ;
+: pos ( Z -- X Y ) t + >r
+  r@       sin 5 / .5 + r@ 3.1 * sin 5 / +
+  r@ 1.1 * cos 5 / .5 + r> 3   * cos 5 / + ;
+: r ( X Y -- r ) y - dup * swap x - dup * + sqrt ;
+: b r .08 > * ;  : p r .07 < ;
+: drawball ( Z -- ball ) pos 2>r
+  2r@ b        rot  2r@ b        rot  2r@ b        rot
+  2r@ p .9 * + rot  2r@ p .2 * + rot  2r> p 0  * + rot ;
+: b / floor 2 mod ; : m 64 * ;  : p 6 * cos 2 / .5 + ;
+: col dup dup p swap .33 + p rot .66 + p ;
+: a dup rot swap b -rot b + abs 2 mod ;
+: w dup x m y m rot a * + ;
+9 0
+  w 2 w 4 w 8 w 16 w 32 w 64 w  200 / .5 + t 10 / + col
+  2 / .4 + rot 2 / .4 + rot 2 / .4 + rot
+  0 drawball .15 drawball .3 drawball .45 drawball .6 drawball
+\ ) \  [V]
+\ \ \ --------------------------------------------------------------
+  ( \ 【W】 雙羅盤
+\ rollingCompass3 https://forthsalon.appspot.com/haiku-view/ahBzfmZvcnRoc2Fsb24taHJkchILEgVIYWlrdRiAgICA4vydCgw
+  : 原點! ( X Y -- ) 1 ! 0 ! ;  : 原點 ( -- X Y ) 0 @ 1 @ ;
+  : 橫標! ( -- X ) 0 ! ;  : 橫標 ( -- X ) 0 @ ;
+  : 縱標! ( -- Y ) 1 ! ;  : 縱標 ( -- Y ) 1 @ ;
+  : 軸向! ( A -- ) 2 ! ;  : 軸向 ( -- A ) 2 @ ;
+  : 半徑! ( R -- ) 3 ! ;  : 半徑 ( -- R ) 3 @ ;    1 半徑!
+  : 暈度! ( H -- ) 4 ! ;  : 暈度 ( -- H ) 4 @ ;  150 暈度!
+  : 2pi 5 @ ;  2 pi * 5 !
+  : atan2 atan2 2pi / 1 mod ;
+  : cos 2pi * cos ;  : sin 2pi * sin ;
+  : x x 0 @ - ; : y y 1 @ - ;
+  : r ( -- r ) y 2 ** x 2 ** + .5 ** ;
+  : a ( -- a ) y x atan2 2 @ - 1 mod ;
+  : x ( -- x ) r a cos * ;
+  : y ( -- y ) r a sin * ;
+  : 線半徑 .01 ;
+  : 線 x abs 線半徑 < ;
+  : 暈度 39 ;
+  : 暈 x abs 1 swap - 暈度 ** ;
+  : 絕對值 ( n -- n的絕對值 ) abs ;
+  : 取大 ( n1 n2 -- n ) max ;
+  : 取小 ( n1 n2 -- n ) min ;
+  : 對調 ( n1 n2 -- n2 n1 ) swap ;
+  : 入疊 ( n -- ) >r ;
+  : 出疊 ( -- n ) r> ;
+  : 疊頂 ( -- n ) r@ ;
+  : 複製 ( n -- n n ) dup ;
+  : 負值 ( n -- -n ) negate ;
+  : 反圖 ( 圖 -- 反圖 ) 1 取小 0 取大 1 對調 - ; 
+  : 等高線 ( f y -- 線 ) - 絕對值 反圖 暈度 **  ;
+  : 橫線 ( Y -- 線 ) y 等高線 ;
+  : 垂線 ( X -- 線 ) x 等高線 ;
+  : 圈 ( R -- 圈 ) r 等高線 ;
+  : 圓 ( R -- 圓 ) r > ;
+  : 兩點線 ( X1 Y1 X2 Y2 -- 線段 )
+    入疊 入疊 ( X1 Y1 ) 原點!
+    出疊 橫標 - 出疊 縱標 - ( X2-X1 Y2-Y1 ) \ over 2 ** over 2 ** + sqrt 半徑!
+    對調 atan2 軸向! 0 橫線 ;
+  : 羅盤 ( X Y R -- ) 半徑! 原點!                   t 60 / 負值
+    軸向! 0 垂線 0 橫線 + 半徑 1.2 * 圓 * 半徑 圈 +  t 10 /
+    軸向! 半徑 .55 * 入疊
+    疊頂 橫線  x 疊頂 > *  疊頂 垂線  y 出疊 > *
+    軸向 .125 + 軸向!  0 橫線  x 0 > *  + +
+    r 反圖 2 **  *  半徑 * +  半徑 圓 .1 * + ;
+  : p1 .30 .35 ;  : p2 .60 .50 ;  \ 羅盤中心點 分別在 P1 與 P2
+  p1 .2 羅盤    半徑 .8 * 圓 複製 入疊 .1 * + \ 紅
+  p2 .3 羅盤    半徑 .8 * 圓 複製 入疊 .1 * + \ 綠
+  p1 p2 兩點線  出疊 出疊 + .5 *            + \ 藍
+  0 0 原點!  x y + *                         \ 透
+\ ) \  [W]
+\ \ \ --------------------------------------------------------------
+</textarea>
+<div id="tag_area" hidden=1>
+</td></tr></table></div>
+<script type="text/javascript" src="./html/PublishedHaiku/haiku1.js"></script>
+<script type="text/javascript" src="./html/PublishedHaiku/glossary.js"></script>
+<script type="text/javascript" hidden="true">
+var body=document, 
+	section=body.getElementsByClassName("section")[0],
+	table=section.getElementsByTagName("table")[0],
+	canvas0=table.getElementsByTagName('canvas')[0],
+	td=table.getElementsByTagName("td")[1],
+	s;
+function actYo(){ src_code.scrollTop=800; }
+var src_code_cur;
+function actOnGlossary(){
+	var h=aGlossary.innerHTML;
+    if(h.substr(0,2)=="開啟"){
+		src_code.contentEditable="false";
+    	src_code.value=src_code_cur=glossary.map(function(w){return w[0]+"\n\t"+w[1];}).join("\n");
+		aGlossary.innerHTML="關閉"+h.substr(2);
+    } else {
+		src_code.contentEditable='inherit';
+		src_code.value=dst_code.value;
+		aGlossary.innerHTML="開啟"+h.substr(2);
+    }
+}
+function saveSize(){
+	localStorage.setItem('src_code.style.width',
+		src_code.style.width);
+	localStorage.setItem('src_code.style.height',
+		src_code.style.height);
+}
+window.strCut = function (str, n){ // cut leading substring for at most n space width
+	var m, i, e;
+	m = str.length; var i;
+	for(e = i = 0; e < n && i < m; e++, i++) if(str.charCodeAt(i) > 0xff) e++;
+	
+	return str.substring(0,i);
+}
+var lastOpened;
+function update() {
+	if(src_code.contentEditable!="inherit"){
+		src_code.value=src_code_cur;
+		return;
+	}
+	var s=src_code.value;
+	dst_code.value = s;
+	var m, t, d, m0, t0, m1, t1;
+	m=s.match(/\\ \( \\ (.+)/);
+	t=0;
+	if(m) t=strCut(m[1],18), d=m[0];
+	else if (lastOpened) t=lastOpened, d='  ( \\ '+t;
+	if(t){
+		lastOpened=t;
+		s=s.split(d);
+		m0=s[0].match(/  \( \\ .+/g);
+		m1=s[1].match(/  \( \\ .+/g);
+		if(m0 && m1) {
+			t0=strCut(m0[m0.length-1].substr(6),18);
+			t1=strCut(m1[0].substr(6),18);
+			aOpenPrev.innerHTML= "開啟 "+t0;
+			aCloseCurr.innerHTML = m ? ("關閉 <font color=yellow>"+t+"</font>") : "開啟 "+t;
+			aOpenNext.innerHTML = "開啟 "+t1;
+		} else if (m0) {
+			t0=strCut(m0[m0.length-2].substr(6),18);
+			t1=strCut(m0[m0.length-1].substr(6),18);
+			aOpenPrev.innerHTML= "開啟 "+t0;
+			aCloseCurr.innerHTML= "開啟 "+t1;
+		    aOpenNext.innerHTML= m ? ("關閉 <font color=yellow>"+t+"</font>") : "開啟 "+t;
+		} else {
+			t0=strCut(m1[0].substr(6),18);
+			t1=strCut(m1[1].substr(6),18);
+			aOpenPrev.innerHTML= m ? ("關閉 <font color=yellow>"+t+"</font>") : "開啟 "+t;
+			aCloseCurr.innerHTML= "開啟 "+t0;
+			aOpenNext.innerHTML= "開啟 "+t1;
+		}
+		//	src_code.selectionStart=src_code.value.indexOf(t);
+		//	src_code.selectionEnd=src_code.selectionStart+t.length;
+	} else {
+		m=s.match(/  \( \\ .+/g);
+		aOpenPrev.innerHTML="開啟 "+strCut(m[0].substr(6),18);
+		aCloseCurr.innerHTML="開啟 "+strCut(m[1].substr(6),18);
+		aOpenNext.innerHTML="開啟 "+strCut(m[2].substr(6),18);
+	}
+	update_tags();
+}
+//0. 更新 update_tag, 用localStorage.setItem 隨時備存 程式碼
+function update_tags(){
+	var t=src_code.value;
+	if(t){
+		localStorage.setItem('src_code',t); // 隨時備存 程式碼
+		tag_area.innerHTML= code_tags(t).join(' | ');
+		var m=t.match(/^(.+)\\ \( \\ (\S+)(.+)$/);
+		if(m){ aCloseCurr.innerHTML=aCloseCurr.innerHTML.replace("此例",m[2]); }
+	}
+}
+var f3=function (f){
+	if(f<0)f=0;
+	var s=f.toString().substr(0,5);
+	if(s.indexOf('.')<0) s+='.000';
+	var list=s.split('.'),p0=list[0], p1=list[1];
+	p1=p1.substr(0,3);
+	var n=p1.length;
+	if(n<3) p1+='000'.substr(0,3-n);
+	return p0+'.'+p1;
+}
+function actOnTitle(obj){
+  var h=obj.innerHTML, a=h.substr(0,2), t=h.substr(3);
+  src_code.value=src_code.value.replace("\\ \( \\ ","  \( \\ ");
+  if(a=="開啟") src_code.value=src_code.value.replace("  \( \\ "+t,"\\ \( \\ "+t);
+  update();
+}
+function init() {
+	window.uniqueFCode = true;
+//1. 用 localStorage.getItem 在 網頁重新啟動後 取回 程式碼
+	var s=localStorage.getItem('src_code');
+	if(typeof(s)==='string') src_code.value=s;
+	else s=src_code.value;
+	if(s) update();
+	animate_haikus(function() {});
+	
+//2. 輸入格 新增 onpaste 及 onkeyup 自動 update, 編譯並執行
+	src_code.onpaste=function(event){
+		update()
+	};
+	src_code.onkeyup=function(event){
+		update()
+	};
+
+//3. 在 canvas 增加 onmousemove 顯示滑鼠位置
+     window.time=GetTime();
+     canvas0=table.getElementsByTagName('canvas')[0];
+     canvas0.style.cursor='move';
+     canvas0.onmousemove=function onMouseMove(){
+       var x=event.pageX/200-.01, y=1.010-event.pageY/200;
+       var h=mouse.innerHTML;
+       h=h.replace(/x,y \(.+\)/,'x,y ('+f3(x)+','+f3(y)+')');
+       var time=GetTime(), lastTime=window.time;
+       h=h.replace(/t \(.+\)/,'t ('+f3(time)+')');
+       var work1, work2, work3, work4;
+       var stack=ugo(time,time-lastTime,x,y,x,y,0);
+       h=h.replace(/R \(.+\)/,'R ('+f3(stack[0]||0)+')');
+       h=h.replace(/G \(.+\)/,'G ('+f3(stack[1]||0)+')');
+       h=h.replace(/B \(.+\)/,'B ('+f3(stack[2]||0)+')');
+       h=h.replace(/T \(.+\)/,'T ('+f3(stack[3]||1)+')');
+       mouse.innerHTML=h;
+       window.h=h;
+     //console.log(mouse.innerHTML,window.mouse_x_loc,window.mouse_y_loc,window.time_val_loc);
+     }
+//5. 將 div section 的 padding 及 margin 設為 0, 並調整 height 等
+    body=document.body, 
+	height=body.clientHeight, width=body.clientWidth,
+	section=body.getElementsByClassName("section")[0],
+	s=section.style,
+	table=section.getElementsByTagName("table")[0],
+	canvas0=table.getElementsByTagName('canvas')[0],
+	td=table.getElementsByTagName("td")[1];
+	s.padding=0, s.margin=0, s.height=height, s.width=width; // height-=6, width-=6;
+	table.style.height=height;
+	td.style.height=height;
+	td.style.padding=0;
+	src_code.style.height=td.clientHeight, src_code.style.width="100%";
+	console.log("body",width+'x'+height);
+	console.log("section",section.clientWidth+'x'+section.clientHeight);
+	console.log("table",table.clientWidth+'x'+table.clientHeight);
+	console.log("td[1]",td.clientWidth+'x'+td.clientHeight);
+	console.log("src_code",src_code.clientWidth+'x'+src_code.clientHeight);
+}
+function bodyResize(){
+	console.log("body resized height="+document.body.clientHeight);
+}
+//6. 輸入格 放大 可調 並隨時備存 style 下次自動依備存 style 恢復
+src_code.style.width =localStorage.getItem('src_code.style.width' )||'100%';
+src_code.style.height=localStorage.getItem('src_code.style.height')||'400';
+src_code.onresize=function(event){
+	saveSize();
+};
+</script>
+</body></html>

@@ -1,0 +1,32 @@
+{
+  "name": "haiku1_dev",
+  "version": "1.0.0",
+  "description": "forth haiku1 develop",
+  "main": "index.html",
+  "dependencies": {
+    "npm": "^6.1.0",
+    "nw": "^0.31.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samsuanchen/haiku1.git"
+  },
+  "keywords": [
+    "forth",
+    "haiku",
+    "parallel",
+    "computing",
+    "colorfull",
+    "magic",
+    "square"
+  ],
+  "author": "samsaunchen@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samsuanchen/haiku1/issues"
+  },
+  "homepage": "https://github.com/samsuanchen/haiku1#readme"
+}

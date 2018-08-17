@@ -1,0 +1,273 @@
+<!DOCTYPE html><html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Gallery0畫廊</title>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="stylesheet" type="text/css" href="PublishedHaiku/forthsalon.css">
+<link href="PublishedHaiku/favicon.ico" rel="SHORTCUT ICON">
+<meta name="viewport" content="width=600">
+<meta name="viewport" content="initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head><body onload="init();" bgcolor="#000000"><div id="wrapper"><div id="header">
+  <div style="float:right">
+    <form action="http://forthsalon.appspot.com/haiku-search">
+      <input type="text" size="10" name="s" value="陳爽"><input type="submit" value="🔍">
+    </form>
+  </div><h1>Haiku Gallery 0</h1>
+</div><div class="section">
+<!----------------------------------------------------------------------------------------------------->
+<table style="border-color: black" border=1><tr><td><font size=1 padding=1>&nbsp;<b>飽和亮度</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">0<br><textarea style="width: 200; height:100">
+1
+\ 註: 1 是紅光的 飽和亮度</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>一半亮度</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">1<br><textarea style="width: 200; height:100">
+.5
+\ 註: .5 是紅光的 一半亮度</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>漆黑無光</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">2<br><textarea style="width: 200; height:100">
+z
+\ 註: 非認定文字 值 為 0</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>亮度隨x變</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">3<br><textarea style="width: 200; height:100">
+x
+\ 註: x 值 為亮度 左0到右1</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>亮度隨y變</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">4<br><textarea style="width: 200; height:100">
+y
+\ 註: y 值 為亮度 下0到上1</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td></tr><tr><td><font size=1>&nbsp;<b>亮度隨x+y變</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">5<br><textarea style="width: 200; height:100">
+x y +     \ x y 相加
+\ 值大於 1 亮度 為 1</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>亮度隨x-y變</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">6<br><textarea style="width: 200; height:100">
+x y -     \ x y 相減
+\ 值小於 0 亮度 為 0</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>左上區亮</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">7<br><textarea style="width: 200; height:100">
+x y <    \ x y 相比 小於
+\ 邏輯值為亮度 0或1</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>左下區亮</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">8<br><textarea style="width: 200; height:100">
+x y + 1 <     \ x+y 1 小於
+\ 邏輯值為亮度 0或1</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>亮度隨r變</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">9<br><textarea style="width: 200; height:100">
+: xc x .5 - ;
+: yc y .5 - ;
+: r xc 2 ** yc 2 ** + .5 ** ;
+r   \ 中心到任意點 x y 距離
+\ r 值 為亮度 中心0向外遞增</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td></tr><tr><td><font size=1>&nbsp;<b>.4半徑圓</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">10<br><textarea style="width: 200; height:100">
+r .4 <   \ r .4 小於
+\ 邏輯值為亮度 0或1</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>.3半徑洞</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">11<br><textarea style="width: 200; height:100">
+r .3 >   \ r .3 大於
+\ 邏輯值為亮度 0或1</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>.3 .4半徑圈</b></i><br>
+<div class="haiku"><span name="haiku" width="200" height="200">12<br><textarea style="width: 200; height:100">
+: 間 >r over r> <= >r >= r> and ;
+r .3 .4 間  \ .3 < r < .4
+\ 邏輯值為亮度 0或1</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>亮度隨a變</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">13<br><textarea style="width: 200; height:100">
+: 2pi 2 pi * ;
+: a yc xc atan2 2pi / 1 mod ;
+a   \ 中心到任意點 x y 向角
+\ a 值 為亮度 右0反時鐘到1</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>a起點36度</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">14<br><textarea style="width: 200; height:100">
+: 起點 - 1 mod ;
+a .1 起點
+\ a 以36度為 起點</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td></tr><tr><td><font size=1>&nbsp;<b>.3半徑中心圓</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">15<br><textarea style="width: 200; height:100">
+: 中心圓 r > ;
+.3 中心圓
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>.3半徑中心洞</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">16<br><textarea style="width: 200; height:100">
+: 中心洞 r < ;
+.3 中心洞
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>r與.3等值線</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">17<br><textarea style="width: 200; height:100">
+: 線徑 .01 ;
+: 線半徑 線徑 2 / ;
+: 線 - abs 線半徑 < ;
+r .3 線
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>.2半徑中心圈</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">18<br><textarea style="width: 200; height:100">
+: 中心圈 r 線 ;
+.2 中心圈
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>亮度隨1-x變</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">19<br><textarea style="width: 200; height:100">
+: 反 ( v -- 1-v ) 1 swap - ; \ 反轉 光度 (0 到 1 對應至 1 到 0)
+x 反
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td></tr><tr><td><font size=1>&nbsp;<b>r與.3等值暈</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">20<br><textarea style="width: 200; height:100">
+: 暈 ( r v -- 暈 ) - .2 ** 反 ; \ r v 等值暈
+r .3 暈
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>x 3 階</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">21<br><textarea style="width: 200; height:100">
+: 階 ( v n -- v ) \ v 分 n 階 對應區值 0/(n-1) 1/(n-1) .. (n-1)/(n-1)
+  dup push * floor pop 1 - / ; \ v n 的 對應區值 floor(v*n)/(n-1)
+x 3 階
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>a 8 階</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">22<br><textarea style="width: 200; height:100">
+a 8 階
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>x y 8 階格</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">23<br><textarea style="width: 200; height:100">
+: 階格 ( x y n -- v ) \ x,y 的 n*n 階格 對應
+  dup >r 階 swap r> 階 + 2 / ;
+x y 8 階格
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>a r 8 階格</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">24<br><textarea style="width: 200; height:100">
+a r 8 階格
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td></tr><tr><td><font size=1>&nbsp;<b>x 5 摺</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">25<br><textarea style="width: 200; height:100">
+: 摺 ( v n -- v ) * 1 mod ; \ v 的 n 摺 對應
+x 5 摺
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>5*5 圓</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">26<br><textarea style="width: 200; height:100">
+: r' x 5 摺 .5 - 2 **
+y 5 摺 .5 - 2 ** + .5 ** ;
+r' .4 <
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>五瓣花</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">27<br><textarea style="width: 200; height:100">
+r 2 * 反  a 5 摺  >
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>鴨</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">28<br><textarea style="width: 200; height:100">
+r 2 摺 a .3 起點 1.5 摺 >
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>齒輪</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">29<br><textarea style="width: 200; height:100">
+r 4 摺 a 8 摺 <
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td></tr><tr><td><font size=1>&nbsp;<b>x y 8 摺格</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">30<br><textarea style="width: 200; height:100">
+: 摺格 ( x y n -- v ) \ x,y 的 n*n 摺格 對應值
+  dup >r 摺 swap r> 摺 * ;
+x y 8 摺格
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>r a 8 摺格</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">31<br><textarea style="width: 200; height:100">
+r a 8 摺格
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>x原點移到.1</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">32<br><textarea style="width: 200; height:100">
+: 移 ( x n -- v ) - ; \ x=0 移 n
+x .1 移 0 <
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>x值域放2倍</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">33<br><textarea style="width: 200; height:100">
+: 放 ( x n -- v ) * ; \ x值域放n倍
+x 2 放 .2 >
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>x值域縮2倍</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">34<br><textarea style="width: 200; height:100">
+: 縮 ( x n -- v ) / ; \ x值域縮n倍
+x 2 縮 .05 <
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td></tr><tr><td><font size=1>&nbsp;<b>左上 .4 .3 矩形</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">35<br><textarea style="width: 200; height:100">
+: 中心 .5 .5 ; 
+: 矩形 ( x0 y0 w h -- 矩 )
+  2 / >r y rot 移 abs r> < >r
+  2 / swap x 移 abs > r> * ;
+.35 .7 .4 .3 矩形
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>中心 .4 方形</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">36<br><textarea style="width: 200; height:100">
+: 方形 ( x0 y0 d -- 方 ) dup 矩形 ;
+中心 .4 方形
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>.3半徑左下圓</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">37<br><textarea style="width: 200; height:100">
+: 距 ( X Y -- 距 ) \ 指定點 X Y 到 任意點 x y 連線 長度
+  y - 2 ** swap x - 2 ** + sqrt ;
+.4 .4 距 .3 <
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>54度角轉18角</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">38<br><textarea style="width: 200; height:100">
+: 角 ( X Y -- 角 ) \ 指定點 X Y 到 任意點 x y 向線 與 x軸向 間的角度
+  y swap - swap x swap - atan2
+  2pi / 1 mod ;
+
+.2 .2 角 .05 起點 .15 <
+</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td><td><font size=1>&nbsp;<b>網格</b><br>
+<div class="haiku"><span name="haiku" width="200" height="200">39<br><textarea style="width: 200; height:100">
+: n 7 ;
+: nx n x * .02 - ;
+: ny n y * .02 - ;
+: ix nx ceil ;
+: iy ny ceil ;
+nx ix - abs .04 <
+ny iy - abs .04 < +</textarea></span></div>
+<!----------------------------------------------------------------------------------------------------->
+</td></tr></table>
+<h3><a href="./PublishedHaiku2.html">Next</a></h3>
+</div>
+<div id="footer">
+  <a href="https://forthsalon.appspot.com/word-list">Forth Haiku Glossary</a>
+</div>
+</div>
+<script src="PublishedHaiku/haiku1.js"></script>
+<script>
+  function init() { animate_haikus( function(){} ); }
+</script>
+</body></html>

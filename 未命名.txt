@@ -1,0 +1,31 @@
+: xo    0 @ ; :    xo! 0 ! ; 0.5      xo!
+: yo    1 @ ; :    yo! 1 ! ; 0.7      yo!
+: ao    2 @ ; :    ao! 2 ! ; 0.0      ao!
+: 線半徑 3 @ ; : 線半徑! 3 ! ; 0.005 線半徑!
+: n     4 @ ; :     n! 4 ! ; 3         n!
+: 線 - abs 線半徑 < ;
+: 間 >r over r> <= >r >= r> and ;
+: r y yo - dup * x xo - dup * + sqrt ;
+: 2pi 2 pi * ;
+: a y yo - x xo - atan2 2pi / ao - 1 mod ;
+: u r a 2pi * cos * ;  : v r a 2pi * sin * ;
+: 方 ( 邊長 -- 方 ) >r u 0 線 u r@ 線 + v 0 r@ 間 * v 0 線 v r@ 線 + u 0 r> 間 * + ;
+: nu n u * ;  : iu nu ceil ;
+: nv n v * ;  : iv nv ceil ;
+: 階 ( v n -- v ) \ v 分 n 階 對應區值 0/(n-1) 1/(n-1) .. (n-1)/(n-1)
+  dup push * floor pop 1 - / ;
+: 框 (  左 右 下 上 -- 框 )
+ >r >r ( L R ) u -rot over u 線 over u 線 + ( u L R L線+R線 )  v r> dup ( u L R L線+R線 v B B )
+ r@ rot >r ( u L R L線+R線 v B T )  間 * ( u L R L框+R框 )  r> r> ( u L R L框+R框 B T )  rot >r ( u L R B T )
+ v 線 swap v 線 + ( u L R B線+T線 )  >r 間 r> * r> + ;
+a .25 + 1 mod 2 * 1 - abs 7.55 階 dup 1 over -
+
+: xo .5 ;  : yo .7 ;
+: 2pi 2 pi * ;
+: a y yo - x xo - atan2 2pi / .25 + 1 mod ;
+: levels dup push * floor pop 1 - / ;
+a 2 * 1 - abs 7.55 levels
+dup yo < *
+swap yo > * 0 -rot
+
+dup 1 over -
